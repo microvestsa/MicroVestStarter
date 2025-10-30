@@ -1,4 +1,9 @@
 import React from 'react';
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = 'https://orwdkkmekcrnwwdrbqom.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yd2Rra21la2Nybnd3ZHJicW9tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE4MzI0NTEsImV4cCI6MjA3NzQwODQ1MX0.Cnt7lhTeDqjil2Tg3VO0_rrKjTDKzLzXV6wNoXX7KSQ';
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 function App() {
   // معلومات Supabase
@@ -89,22 +94,13 @@ function App() {
               const email = (form.elements.namedItem('email') as HTMLInputElement).value;
               const phone = (form.elements.namedItem('phone') as HTMLInputElement).value;
 
-              const res = await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
-                method: 'POST',
-                headers: {
-                  apikey: SUPABASE_API_KEY,
-                  Authorization: `Bearer ${SUPABASE_API_KEY}`,
-                  'Content-Type': 'application/json',
-                  Prefer: 'return=representation',
-                },
-                body: JSON.stringify({ name, email, phone }),
-              });
+              const { error } = await supabase.from('leads').insert([{ name, email, phone }]);
 
-              if (res.ok) {
+              if (!error) {
                 alert('تم التسجيل بنجاح!');
                 form.reset();
               } else {
-                alert('حدث خطأ أثناء التسجيل، حاول مرة أخرى.');
+                alert('حدث خطأ أثناء التسجيل: ' + error.message);
               }
             }}
           >
