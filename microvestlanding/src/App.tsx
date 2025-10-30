@@ -1,15 +1,12 @@
 import React from 'react';
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = 'https://orwdkkmekcrnwwdrbqom.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yd2Rra21la2Nybnd3ZHJicW9tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE4MzI0NTEsImV4cCI6MjA3NzQwODQ1MX0.Cnt7lhTeDqjil2Tg3VO0_rrKjTDKzLzXV6wNoXX7KSQ';
-const supabase = createClient(supabaseUrl, supabaseKey);
+const supabase = createClient(
+  'https://orwdkkmekcrnwwdrbqom.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yd2Rra21la2Nybnd3ZHJicW9tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE4MzI0NTEsImV4cCI6MjA3NzQwODQ1MX0.Cnt7lhTeDqjil2Tg3VO0_rrKjTDKzLzXV6wNoXX7KSQ'
+);
 
 function App() {
-  // معلومات Supabase
-  const SUPABASE_URL = "https://orwdkkmekcrnwwdrbqom.supabase.co";
-  const SUPABASE_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yd2Rra21la2Nybnd3ZHJicW9tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE4MzI0NTEsImV4cCI6MjA3NzQwODQ1MX0.Cnt7lhTeDqjil2Tg3VO0_rrKjTDKzLzXV6wNoXX7KSQ";
-
   return (
     <div className="min-h-screen flex flex-col font-inter bg-[#f7fff7]" dir="rtl">
       {/* Navbar */}
