@@ -1,6 +1,10 @@
 import React from 'react';
 
 function App() {
+  // معلومات Supabase
+  const SUPABASE_URL = "https://orwdkkmekcrnwwdrbqom.supabase.co";
+  const SUPABASE_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yd2Rra21la2Nybnd3ZHJicW9tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE4MzI0NTEsImV4cCI6MjA3NzQwODQ1MX0.Cnt7lhTeDqjil2Tg3VO0_rrKjTDKzLzXV6wNoXX7KSQ";
+
   return (
     <div className="min-h-screen flex flex-col font-inter bg-[#f7fff7]" dir="rtl">
       {/* Navbar */}
@@ -76,7 +80,34 @@ function App() {
       <section id="leadform" className="w-full bg-white/90 py-8 px-4 flex justify-center">
         <div className="rounded-xl shadow-lg border px-6 py-10 md:p-12 bg-white w-full max-w-lg flex flex-col items-center">
           <h3 className="font-bold text-2xl mb-6 font-tajawal text-primary text-center">سجّل إيميلك عشان تكون من أول المستخدمين</h3>
-          <form className="w-full space-y-4 font-tajawal">
+          <form
+            className="w-full space-y-4 font-tajawal"
+            onSubmit={async (e) => {
+              e.preventDefault();
+              const form = e.target as HTMLFormElement;
+              const name = (form.elements.namedItem('name') as HTMLInputElement).value;
+              const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+              const phone = (form.elements.namedItem('phone') as HTMLInputElement).value;
+
+              const res = await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
+                method: 'POST',
+                headers: {
+                  apikey: SUPABASE_API_KEY,
+                  Authorization: `Bearer ${SUPABASE_API_KEY}`,
+                  'Content-Type': 'application/json',
+                  Prefer: 'return=representation',
+                },
+                body: JSON.stringify({ name, email, phone }),
+              });
+
+              if (res.ok) {
+                alert('تم التسجيل بنجاح!');
+                form.reset();
+              } else {
+                alert('حدث خطأ أثناء التسجيل، حاول مرة أخرى.');
+              }
+            }}
+          >
             <div>
               <label htmlFor="name" className="block text-sm mb-1 font-semibold">الاسم</label>
               <input type="text" id="name" name="name" autoComplete="name" className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent-light bg-gray-50" required />
