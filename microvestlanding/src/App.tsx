@@ -72,16 +72,7 @@ function App() {
         </div>
       </section>
 
-      {/* Why microVest Section */}
-      <section className="max-w-3xl w-full mx-auto px-6 pb-10">
-        <h2 className="text-2xl text-primary font-bold mb-6 text-center font-tajawal">ليش MicroVest؟</h2>
-        <ul className="space-y-2 text-lg font-tajawal text-right">
-          <li className="flex items-start gap-2"><span className="text-accent-light text-xl">•</span> تبدأ الاستثمار حتى لو معك مبلغ بسيط جداً.</li>
-          <li className="flex items-start gap-2"><span className="text-accent-light text-xl">•</span> كل شيء تلقائي—بدون تعب ولا متابعة.</li>
-          <li className="flex items-start gap-2"><span className="text-accent-light text-xl">•</span> تقدر تحفظ وتحسّن عاداتك المالية بسهولة.</li>
-          <li className="flex items-start gap-2"><span className="text-accent-light text-xl">•</span> خدمة آمنة، والأمان أولوية قصوى.</li>
-        </ul>
-      </section>
+   
 
       {/* Lead Capture Form Section */}
       <section id="leadform" className="w-full bg-white/90 py-8 px-4 flex justify-center">
