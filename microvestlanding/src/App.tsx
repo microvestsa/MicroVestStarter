@@ -11,7 +11,9 @@ function App() {
     <div className="min-h-screen flex flex-col font-inter bg-[#f7fff7]" dir="rtl">
       {/* Navbar */}
       <nav className="w-full py-4 px-6 md:px-12 flex items-center justify-between bg-white/80 shadow-sm">
-        <span className="text-2xl md:text-3xl font-bold text-primary tracking-tight font-tajawal">microVest</span>
+        <div className="flex items-center gap-3">
+          <img src="/black logo.png" alt="microVest logo" className="h-8 md:h-10 object-contain" />
+        </div>
         <a href="#leadform" className="bg-primary text-white px-6 py-2 rounded-xl font-semibold text-lg shadow-md hover:bg-dark-green transition-all font-tajawal">سجّل اهتمامك</a>
       </nav>
 
@@ -20,18 +22,21 @@ function App() {
         {/* Left - Text */}
         <div className="flex-1 flex flex-col gap-6 items-center md:items-start text-center md:text-right">
           <h1 className="text-3xl md:text-5xl font-black text-primary font-tajawal leading-relaxed">استثمر الباقي من مشترياتك تلقائيًا</h1>
-          <p className="text-lg md:text-xl text-dark-green font-tajawal">microVest يقرب عملياتك لأقرب مبلغ ويستثمر الفرق عنك، عشان تبدأ تستثمر حتى لو المبلغ صغير.</p>
+          <p className="text-lg md:text-xl text-dark-green font-tajawal">MicroVest يقرب عملياتك لأقرب مبلغ ويستثمر الفرق عنك، عشان تبدأ تستثمر حتى لو المبلغ صغير.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start w-full">
             <a href="#leadform" className="bg-primary text-white flex-1 text-center py-3 rounded-xl font-bold text-lg shadow-md hover:bg-dark-green transition-all font-tajawal">سجّل اهتمامك</a>
             <a href="#how" className="flex-1 text-center border-2 border-accent text-accent py-3 rounded-xl font-bold text-lg hover:bg-accent-light/30 transition-all font-tajawal">كيف نشتغل؟</a>
           </div>
         </div>
-        {/* Right - Example Card */}
+        {/* Right - Illustration + Example Card */}
         <div className="flex-1 flex justify-center md:justify-end w-full">
-          <div className="rounded-xl border-2 border-accent bg-white/70 shadow-lg p-6 w-[320px] max-w-full space-y-3">
-            <div className="flex items-center justify-between font-tajawal text-lg"><span>عملية شراء:</span><span className="font-bold text-primary">37 ريال</span></div>
-            <div className="flex items-center justify-between font-tajawal text-lg"><span>تم التقريب إلى:</span><span className="font-bold text-dark-green">40 ريال</span></div>
-            <div className="flex items-center justify-between font-tajawal text-lg"><span>تم استثمار:</span><span className="font-bold text-accent">3 ريال</span></div>
+          <div className="relative w-full max-w-md">
+            <img src="/banner-01.png" alt="microVest banner" className="w-full h-auto rounded-xl shadow-md" />
+            <div className="absolute -bottom-6 left-4 right-4 md:left-auto md:right-6 md:bottom-6 rounded-xl border-2 border-accent bg-white/90 backdrop-blur shadow-lg p-6 space-y-3">
+              <div className="flex items-center justify-between font-tajawal text-lg"><span>عملية شراء:</span><span className="font-bold text-primary">57 ريال</span></div>
+              <div className="flex items-center justify-between font-tajawal text-lg"><span>تم التقريب إلى:</span><span className="font-bold text-dark-green">60 ريال</span></div>
+              <div className="flex items-center justify-between font-tajawal text-lg"><span>تم استثمار:</span><span className="font-bold text-accent">3 ريال</span></div>
+            </div>
           </div>
         </div>
       </section>
@@ -46,7 +51,7 @@ function App() {
               <span className="text-3xl">🔗</span>
             </div>
             <div className="font-bold text-lg font-tajawal">اربط بطاقتك</div>
-            <div className="text-gray-500 font-tajawal text-center">فعّل الربط عشان نقدر نلاحظ العمليات البنكية.</div>
+            <div className="text-gray-500 font-tajawal text-center">فعّل الربط لتتمكن من متابعة عملياتك البنكية بسهولة وأمان.</div>
           </div>
           {/* Step 2 */}
           <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center gap-4 border-t-4 border-accent">
@@ -54,7 +59,7 @@ function App() {
               <span className="text-3xl">🔄</span>
             </div>
             <div className="font-bold text-lg font-tajawal">نقرّب كل عملية</div>
-            <div className="text-gray-500 font-tajawal text-center">نقرب كل مشترياتك لأقرب مبلغ صحيح.</div>
+            <div className="text-gray-500 font-tajawal text-center">نقرب قيمة كل عملية شراء لأقرب مبلغ صحيح تلقائياً</div>
           </div>
           {/* Step 3 */}
           <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center gap-4 border-t-4 border-primary">
@@ -69,7 +74,7 @@ function App() {
 
       {/* Why microVest Section */}
       <section className="max-w-3xl w-full mx-auto px-6 pb-10">
-        <h2 className="text-2xl text-primary font-bold mb-6 text-center font-tajawal">ليش microVest؟</h2>
+        <h2 className="text-2xl text-primary font-bold mb-6 text-center font-tajawal">ليش MicroVest؟</h2>
         <ul className="space-y-2 text-lg font-tajawal text-right">
           <li className="flex items-start gap-2"><span className="text-accent-light text-xl">•</span> تبدأ الاستثمار حتى لو معك مبلغ بسيط جداً.</li>
           <li className="flex items-start gap-2"><span className="text-accent-light text-xl">•</span> كل شيء تلقائي—بدون تعب ولا متابعة.</li>
@@ -120,8 +125,9 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="text-center py-3 text-xs text-gray-400 font-tajawal bg-transparent">
-        microVest – مشروع سعودي قيد التطوير
+      <footer className="text-center py-4 text-xs text-gray-500 font-tajawal bg-transparent flex items-center justify-center gap-2">
+        <img src="/black logo.png" alt="microVest" className="h-5 object-contain" />
+        <span>MicroVest – مشروع سعودي قيد التطوير</span>
       </footer>
     </div>
   );
